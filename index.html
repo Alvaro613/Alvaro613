@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Personal</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Estilos Generales --- */
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6; /* Un gris muy claro para el fondo */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #ffffff; /* Tarjeta principal blanca */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Encabezado y Títulos --- */
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #0056b3; /* Un azul profesional */
+            font-weight: 700;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        /* --- Sección "Sobre Mí" --- */
+        #sobre-mi {
+            display: flex;
+            align-items: center;
+            gap: 30px; /* Espacio entre la foto y el texto */
+            margin-top: 20px;
+        }
+
+        #sobre-mi img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* Hace la imagen redonda */
+            object-fit: cover; /* Asegura que la imagen se vea bien */
+            border: 4px solid #0056b3; /* Borde azul alrededor de la foto */
+        }
+
+        #sobre-mi p {
+            flex: 1; /* El texto ocupa el espacio restante */
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* --- Sección "Habilidades" --- */
+        #habilidades ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap; /* Para que se ajusten en varias líneas */
+            gap: 10px;
+        }
+
+        #habilidades li {
+            background-color: #e9f5ff; /* Fondo azul claro para las "píldoras" */
+            color: #0056b3; /* Texto azul */
+            padding: 8px 15px;
+            border-radius: 20px; /* Píldoras redondeadas */
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        /* --- Sección "Contacto" --- */
+        #contacto p {
+            font-size: 1.1em;
+        }
+
+        #contacto a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        #contacto a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Pie de Página --- */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #888;
+        }
+        
+        /* --- Responsividad para Móviles --- */
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            /* Apila la foto y el texto en vertical */
+            #sobre-mi {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #sobre-mi img {
+                width: 150px;
+                height: 150px;
+                margin-bottom: 15px;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Tu Nombre Completo</h1>
+        </header>
+        
+        <main>
+            <section id="sobre-mi">
+                <img src="IMG_7154.jpg" alt="Foto de perfil">
+                <p>
+                    Estoy buscando trabajo a media jornada, por la tarde, para compaginar con mis estudios. Voy bien y me gustaría adquirir experiencia laboral. Me manejo muy bien con ordenadores. Soy una persona social y abierta, me gusta ayudar y tengo ante todo una actitud positiva. Estoy preparado para aprender y se me da bien hablar y tratar con los demás, sean compañeros o clientes.
+                </p>
+            </section>
+
+            <section id="habilidades">
+                <h2>Mis Habilidades</h2>
+                <ul>
+                    <li>Manejo avanzado de ordenadores</li>
+                    <li>Atención al cliente</li>
+                    <li>Actitud positiva y proactiva</li>
+                    <li>Capacidad de aprendizaje rápido</li>
+                    <li>Trabajo en equipo</li>
+                    <li>Comunicación social y abierta</li>
+                    </ul>
+            </section>
+
+            <section id="contacto">
+                <h2>Contacto</h2>
+                <p>
+                    Puedes contactarme a través de los siguientes medios:
+                </p>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:tuemail@dominio.com">tuemail@dominio.com</a></li>
+                    <li><strong>Teléfono:</strong> +34 600 000 000</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 - Creado por Tu Nombre</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
