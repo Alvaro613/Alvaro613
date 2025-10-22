@@ -3,73 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio Personal</title>
+    <title>Álvaro Reinoso Alvarado</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
+        /* --- Paleta de Color --- */
+        :root {
+            --color-primario: #00796b; /* Un verde azulado (teal) profesional */
+            --color-primario-oscuro: #004d40; /* Más oscuro para títulos */
+            --color-fondo-claro: #e0f2f1; /* Un teal muy pálido para el fondo */
+            --color-acento: #b2dfdb; /* Un teal medio para bordes/píldoras */
+            --color-texto: #333;
+            --color-fondo-body: #f4f7f6;
+            --color-fondo-tarjeta: #ffffff;
+        }
+
         /* --- Estilos Generales --- */
         body {
             font-family: 'Lato', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f7f6; /* Un gris muy claro para el fondo */
-            color: #333;
+            background-color: var(--color-fondo-body);
+            color: var(--color-texto);
             line-height: 1.6;
         }
 
         .container {
             max-width: 900px;
             margin: 30px auto;
-            padding: 30px;
-            background-color: #ffffff; /* Tarjeta principal blanca */
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        /* --- Encabezado y Títulos --- */
-        header {
-            text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eee;
-        }
-
-        header h1 {
-            margin: 0;
-            color: #0056b3; /* Un azul profesional */
-            font-weight: 700;
-            font-size: 2.5em;
+            background-color: var(--color-fondo-tarjeta);
+            border-radius: 12px; /* Esquinas más redondeadas */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+            /* Importante: oculta lo que se salga para mantener las esquinas redondeadas */
+            overflow: hidden; 
         }
 
         h2 {
-            color: #0056b3;
-            border-bottom: 1px solid #ddd;
+            color: var(--color-primario);
+            border-bottom: 2px solid var(--color-acento);
             padding-bottom: 8px;
             margin-top: 30px;
         }
 
-        /* --- Sección "Sobre Mí" --- */
+        /* --- NUEVA: Sección Hero (Intro + Foto) --- */
+        .hero-section {
+            background-color: var(--color-fondo-claro);
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 20px 0;
+            color: var(--color-primario-oscuro);
+            font-weight: 700;
+            font-size: 2.5em;
+        }
+
         #sobre-mi {
             display: flex;
-            align-items: center;
-            gap: 30px; /* Espacio entre la foto y el texto */
-            margin-top: 20px;
+            flex-direction: column; /* Apilado en vertical */
+            align-items: center; /* Centrado */
+            gap: 20px;
         }
 
         #sobre-mi img {
             width: 180px;
             height: 180px;
-            border-radius: 50%; /* Hace la imagen redonda */
-            object-fit: cover; /* Asegura que la imagen se vea bien */
-            border: 4px solid #0056b3; /* Borde azul alrededor de la foto */
+            border-radius: 50%;
+            object-fit: cover;
+            /* Borde blanco para resaltar sobre el fondo de color */
+            border: 5px solid var(--color-fondo-tarjeta); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
         }
 
         #sobre-mi p {
-            flex: 1; /* El texto ocupa el espacio restante */
             font-size: 1.1em;
-            color: #555;
+            color: #444; /* Un poco más oscuro para leer sobre fondo claro */
+            max-width: 650px; /* Evita que el texto sea demasiado ancho */
+            margin: 0;
+        }
+
+        /* --- Contenido Principal (Habilidades, Contacto) --- */
+        main {
+            /* Añadimos más padding inferior al quitar el footer */
+            padding: 30px 30px 40px 30px;
+        }
+
+        /* El primer h2 dentro de main no necesita margen superior */
+        main > section:first-child h2 {
+            margin-top: 0;
         }
 
         /* --- Sección "Habilidades" --- */
@@ -77,26 +102,35 @@
             list-style: none;
             padding: 0;
             display: flex;
-            flex-wrap: wrap; /* Para que se ajusten en varias líneas */
+            flex-wrap: wrap;
             gap: 10px;
         }
 
         #habilidades li {
-            background-color: #e9f5ff; /* Fondo azul claro para las "píldoras" */
-            color: #0056b3; /* Texto azul */
+            background-color: var(--color-fondo-claro);
+            color: var(--color-primario);
             padding: 8px 15px;
-            border-radius: 20px; /* Píldoras redondeadas */
+            border-radius: 20px;
             font-size: 0.95em;
-            font-weight: 500;
+            font-weight: 600; /* Un poco más destacado */
         }
 
         /* --- Sección "Contacto" --- */
         #contacto p {
             font-size: 1.1em;
         }
+        
+        #contacto ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #contacto li {
+             margin-bottom: 10px; /* Espacio entre email y teléfono */
+        }
 
         #contacto a {
-            color: #0056b3;
+            color: var(--color-primario);
             text-decoration: none;
             font-weight: 600;
         }
@@ -104,38 +138,28 @@
         #contacto a:hover {
             text-decoration: underline;
         }
-
-        /* --- Pie de Página --- */
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
-            color: #888;
-        }
         
         /* --- Responsividad para Móviles --- */
         @media (max-width: 600px) {
             .container {
                 margin: 10px;
+            }
+            
+            .hero-section {
+                padding: 30px 20px;
+            }
+
+            main {
                 padding: 20px;
             }
 
-            /* Apila la foto y el texto en vertical */
-            #sobre-mi {
-                flex-direction: column;
-                text-align: center;
+            header h1 {
+                font-size: 2em;
             }
 
             #sobre-mi img {
                 width: 150px;
                 height: 150px;
-                margin-bottom: 15px;
-            }
-
-            header h1 {
-                font-size: 2em;
             }
         }
     </style>
@@ -144,18 +168,19 @@
 
     <div class="container">
         
-        <header>
-            <h1>Tu Nombre Completo</h1>
-        </header>
-        
-        <main>
+        <div class="hero-section">
+            <header>
+                <h1>Álvaro Reinoso Alvarado</h1>
+            </header>
+            
             <section id="sobre-mi">
-                <img src="IMG_7154.jpg" alt="Foto de perfil">
+                <img src="/Alvaro613/img_7154.jpg" alt="Foto de perfil de Álvaro Reinoso">
                 <p>
                     Estoy buscando trabajo a media jornada, por la tarde, para compaginar con mis estudios. Voy bien y me gustaría adquirir experiencia laboral. Me manejo muy bien con ordenadores. Soy una persona social y abierta, me gusta ayudar y tengo ante todo una actitud positiva. Estoy preparado para aprender y se me da bien hablar y tratar con los demás, sean compañeros o clientes.
                 </p>
             </section>
-
+        </div>
+        <main>
             <section id="habilidades">
                 <h2>Mis Habilidades</h2>
                 <ul>
@@ -174,17 +199,12 @@
                     Puedes contactarme a través de los siguientes medios:
                 </p>
                 <ul>
-                    <li><strong>Email:</strong> <a href="mailto:tuemail@dominio.com">tuemail@dominio.com</a></li>
-                    <li><strong>Teléfono:</strong> +34 600 000 000</li>
+                    <li><strong>Email:</strong> <a href="mailto:alvaroreinosoalvarado613@gmail.com">alvaroreinosoalvarado613@gmail.com</a></li>
+                    <li><strong>Teléfono:</strong> +34 696280135</li>
                 </ul>
             </section>
         </main>
-
-        <footer>
-            <p>&copy; 2025 - Creado por Tu Nombre</p>
-        </footer>
-
-    </div>
+        </div>
 
 </body>
 </html>
